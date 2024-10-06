@@ -1,0 +1,40 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: aqua;
+}
+
+.about-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-image {
+    width: 400px; /* Adjust width as needed */
+    height: 400px;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.text {
+    flex: 1; /* This allows the text section to grow */
+    text-align: left; /* Align text to the left */
+}
+
+.read-more-button {
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.read-more-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

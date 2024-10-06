@@ -1,0 +1,25 @@
+/* src/Course.css */
+.card .card-img-top{
+    height: 230px;
+}
+.course-slider {
+    padding: 40px 80px !important;
+ 
+    
+  }
+  .main-container{
+    background-color: rgb(114, 103, 103);
+  }
+  
+  .course-card {
+    padding: 10px;
+    cursor: pointer;
+    height: 500px !important;
+    width: 300px !important;
+  }
+  
+  /* Optional: To give more space around cards in the slider */
+  .slick-slide {
+    padding: 50px;
+  }
+  

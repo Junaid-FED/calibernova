@@ -1,0 +1,9 @@
+body::-webkit-scrollbar{
+  display: none;
+}
+body{
+  overflow-x: hidden;
+}
+.main-app{
+  overflow-x: hidden;
+}

@@ -1,0 +1,33 @@
+.nav-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* Space between left and right */
+  align-items: center; /* Center vertically */
+  background: linear-gradient(90deg, #005f73, #0a9396); /* Attractive background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#logo {
+  height: auto; /* Maintain aspect ratio */
+  width: 150px; /* Set width */
+  margin-right: 20px; /* Space between logo and navbar items */
+}
+
+.btn {
+  background-color: #ee9b00; /* Button background */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding for button */
+  border-radius: 5px; /* Rounded button */
+  font-size: 1em; /* Button text size */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn:hover {
+  background-color: #ca6702; /* Darker shade on hover */
+}
+
+.navbar-brand {
+  text-decoration: none; /* Remove underline from links */
+}

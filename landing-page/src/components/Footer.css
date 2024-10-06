@@ -1,0 +1,87 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #007bff; /* Optional: Add a top border for distinction */
+}
+
+.footer-content {
+  display: flex; /* Enable flexbox */
+  justify-content: space-between; /* Space between elements */
+  align-items: flex-start; /* Align items to the start */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footer-logo {
+  max-width: 150px; /* Set a maximum width */
+  width: 100%; /* Allow logo to be responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+  transition: transform 0.3s; /* Add a subtle hover effect */
+}
+
+.footer-logo:hover {
+  transform: scale(1.05); /* Slightly scale the logo on hover */
+}
+
+.footer-title {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.course-list, .social-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-list li, .social-list li {
+  margin: 5px 0;
+}
+
+.footer-contact {
+  margin: 10px 0;
+}
+
+.footer-social {
+  margin: 10px 0;
+}
+
+.footer-bottom {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 20px;
+  background-color: black; /* Add some space above the bottom text */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items */
+  }
+}
+
+.social-list li {
+  display: inline; /* Display links in a row */
+  margin: 0 10px; /* Space between social icons */
+}
+
+.social-list a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Link color */
+}
+
+.social-list a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Updated icon sizes */
+.social-icon {
+  width: 24px; /* Set a smaller width for icons */
+  height: 24px; /* Set a smaller height for icons */
+  transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
