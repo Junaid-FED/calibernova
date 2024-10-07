@@ -1,25 +1,62 @@
-/* src/Course.css */
-.card .card-img-top{
-    height: 230px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
 }
+
+.main-container {
+  background: linear-gradient(to right,gold, black,grey); /* Gradient background */
+  padding: 40px 0; /* Add some padding */
+}
+
 .course-slider {
-    padding: 40px 80px !important;
- 
-    
+  padding: 40px 80px;
+}
+
+.course-card {
+  padding: 10px;
+  cursor: pointer;
+  height: 500px; /* Set height for cards */
+  width: 100%; /* Full width for responsiveness */
+  display: flex; /* Center card content */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white for cards */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+}
+
+.card .card-img-top {
+  height: 230px;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.card-title {
+  color: black; /* Title color */
+}
+
+.card-text {
+  color: #333; /* Description color */
+}
+
+/* Optional: To give more space around cards in the slider */
+.slick-slide {
+  padding: 20px; /* Adjust padding around slides */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .course-slider {
+    padding: 20px; /* Reduce padding for smaller screens */
   }
-  .main-container{
-    background-color: rgb(114, 103, 103);
-  }
-  
+
   .course-card {
-    padding: 10px;
-    cursor: pointer;
-    height: 500px !important;
-    width: 300px !important;
+    height: auto; /* Allow height to be dynamic */
   }
-  
-  /* Optional: To give more space around cards in the slider */
-  .slick-slide {
-    padding: 50px;
-  }
-  
+}

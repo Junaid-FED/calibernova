@@ -17,15 +17,31 @@ const SpinWheel = () => {
   const [ang, setAng] = useState(0);
   const [spinButtonClicked, setSpinButtonClicked] = useState(false);
   const [spinVal, setSpinVal] = useState(null);
-  const dia = 600; // Canvas width and height
+  const [dia, setDia] = useState(600); // Initial diameter
+
+  const updateDimensions = () => {
+    const newDia = window.innerWidth < 600 ? window.innerWidth * 0.8 : 600;
+    setDia(newDia);
+  };
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+    };
+  }, []);
+
   const rad = dia / 2;
-  const friction = 0.99; // Adjust friction to slow down more naturally
+  const friction = 0.99;
 
   const getIndex = () => Math.floor(sectors.length - (ang / (2 * Math.PI)) * sectors.length) % sectors.length;
 
   const drawSector = (ctx, sector, i) => {
     const arc = (2 * Math.PI) / sectors.length;
     const angle = arc * i;
+
     ctx.save();
     ctx.beginPath();
     ctx.fillStyle = sector.color;
@@ -34,11 +50,13 @@ const SpinWheel = () => {
     ctx.lineTo(rad, rad);
     ctx.fill();
 
+    // Adjust font size based on diameter
+    const fontSize = Math.max(12, dia / 30); // Minimum font size for better visibility
     ctx.translate(rad, rad);
     ctx.rotate(angle + arc / 2);
     ctx.textAlign = "right";
     ctx.fillStyle = sector.text;
-    ctx.font = "bold 30px 'Lato', sans-serif";
+    ctx.font = `bold ${fontSize}px 'Lato', sans-serif`;
     ctx.fillText(sector.label, rad - 10, 10);
     ctx.restore();
   };
@@ -52,11 +70,8 @@ const SpinWheel = () => {
       const finalIndex = getIndex();
       const finalSector = sectors[finalIndex];
 
-      // Set the displayed value based on the sector landed on
-      console.log(`Woop! You won ${finalSector.label}`);
       setSpinVal(finalSector.label);
-
-      setSpinButtonClicked(false); // Allow for future spins
+      setSpinButtonClicked(false);
       return;
     }
 
@@ -84,9 +99,9 @@ const SpinWheel = () => {
 
     const spinButton = () => {
       if (!angVel) {
-        setAngVel(Math.random() * (0.5) + 0.25);
+        setAngVel(Math.random() * 0.5 + 0.25);
         setSpinButtonClicked(true);
-        setSpinVal(null); // Reset the displayed value when spinning again
+        setSpinVal(null);
       }
     };
 
@@ -96,7 +111,7 @@ const SpinWheel = () => {
     return () => {
       spinButtonElement.removeEventListener("click", spinButton);
     };
-  }, [angVel]);
+  }, [angVel, dia]);
 
   return (
     <div className='spin-container'>
@@ -105,10 +120,10 @@ const SpinWheel = () => {
         <div id="spin">SPIN</div>
       </div>
       <div className="right">
-        <p>Take a screenshot of the spinner</p>
-        <p style={{ border: "2px solid black", width: "300px", padding: "20px", textAlign: "center" }}>
+        <p className="screenshot-instruction">Take a screenshot of the spinner</p>
+        <div className={`spinner-box ${spinVal ? 'show' : ''}`}>
           {spinVal || "Spin the wheel!"}
-        </p>
+        </div>
       </div>
     </div>
   );

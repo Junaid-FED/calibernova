@@ -6,6 +6,7 @@ const AboutUs = () => {
 
     const toggleReadMore = () => {
         setIsExpanded(!isExpanded);
+        
     };
 
     return (

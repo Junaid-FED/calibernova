@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 import logo from '../assets/images/logo.png'; // Ensure the path to the logo is correct
 import facebookIcon from '../assets/images/facebook.png'; // Add your Facebook icon path
 import twitterIcon from '../assets/images/twitter.png'; // Add your Twitter icon path
 import instagramIcon from '../assets/images/instagram.png'; // Add your Instagram icon path
-import youtubeIcon from '../assets/images/youtube.png'; // Add your LinkedIn icon path
+import youtubeIcon from '../assets/images/youtube.png'; // Add your YouTube icon path
 
 const Footer = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you can handle the form submission
+    console.log(`Name: ${name}, Email: ${email}`);
+    setName('');
+    setEmail('');
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -45,11 +56,33 @@ const Footer = () => {
             </li>
             <li>
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                <img src={youtubeIcon} alt="youtube" className="social-icon" />
+                <img src={youtubeIcon} alt="YouTube" className="social-icon" />
               </a>
             </li>
           </ul>
         </div>
+      </div>
+      <div className="footer-form">
+        <h3 className="footer-title">Subscribe</h3>
+        <form onSubmit={handleSubmit} className="subscribe-form">
+          <input 
+            type="text" 
+            placeholder="Your Name" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            required 
+            className="input-field"
+          />
+          <input 
+            type="email" 
+            placeholder="Your Email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required 
+            className="input-field"
+          />
+          <button type="submit" className="send-button">Send</button>
+        </form>
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Caliber Nova. All rights reserved.</p>

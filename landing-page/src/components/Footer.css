@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .footer {
-  background-color: #f8f9fa;
+  background: linear-gradient(to right, gold, silver, gold); /* Gradient from black to grey to silver */
   padding: 20px;
   text-align: center;
-  border-top: 2px solid #007bff; /* Optional: Add a top border for distinction */
+  border-top: 2px solid #007bff;
+  font-family: 'Roboto', sans-serif; /* Optional: Add a top border for distinction */
 }
 
 .footer-content {
@@ -10,14 +13,16 @@
   justify-content: space-between; /* Space between elements */
   align-items: flex-start; /* Align items to the start */
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-bottom: 20px; /* Space below the footer content */
 }
 
 .footer-logo {
   max-width: 150px; /* Set a maximum width */
   width: 100%; /* Allow logo to be responsive */
-  height: auto; /* Maintain aspect ratio */
+  height:auto; /* Maintain aspect ratio */
   margin-bottom: 10px;
-  transition: transform 0.3s; /* Add a subtle hover effect */
+  transition: transform 0.3s;
+   /* Add a subtle hover effect */
 }
 
 .footer-logo:hover {
@@ -38,11 +43,7 @@
   margin: 5px 0;
 }
 
-.footer-contact {
-  margin: 10px 0;
-}
-
-.footer-social {
+.footer-contact, .footer-social {
   margin: 10px 0;
 }
 
@@ -51,6 +52,7 @@
   color: #777;
   margin-top: 20px;
   background-color: black; /* Add some space above the bottom text */
+  padding: 10px; /* Padding for the bottom area */
 }
 
 /* Responsive styles */
@@ -58,6 +60,14 @@
   .footer-content {
     flex-direction: column; /* Stack items vertically on smaller screens */
     align-items: center; /* Center items */
+  }
+
+  .footer-title {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+
+  .footer-logo {
+    margin-bottom: 20px; /* Add more space below the logo on mobile */
   }
 }
 
@@ -84,4 +94,65 @@
 
 .social-icon:hover {
   transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Styles for the form inputs */
+.input-field {
+  width: 100%; /* Full width for inputs */
+  max-width: 300px; /* Limit width */
+  padding: 10px;
+  margin: 10px 0; /* Space between fields */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1em; /* Font size */
+}
+
+.send-button {
+  background-color: #007BFF; /* Button color */
+  color: white; /* Text color */
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s; /* Transition for hover */
+}
+
+.send-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+.footer-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  align-items: center;
+}
+
+.input-field {
+  width: 100%; /* Full width for inputs */
+  max-width: 300px; /* Limit width */
+  padding: 10px;
+  margin: 10px 0; /* Space between fields */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1em; /* Font size */
+}
+
+.send-button {
+  background-color: #007BFF; /* Button color */
+  color: white; /* Text color */
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s; /* Transition for hover */
+}
+
+.send-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
 }
